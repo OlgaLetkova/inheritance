@@ -15,4 +15,15 @@ private String producer;
     public void setProducer(String producer) {
         this.producer = producer;
     }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        if (this.producer.equalsIgnoreCase(search)) {
+            return true;
+        }
+        return false;
+    }
 }
